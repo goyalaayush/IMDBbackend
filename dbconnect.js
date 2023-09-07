@@ -4,8 +4,8 @@ const mongoose=require('mongoose')
 const dbconnect=()=>{
 
     const params={useNewUrlParser:true};
-
-    mongoose.connect('mongodb+srv://imdb:jMKyzxyOyBAIiCXI@cluster0.07ogioi.mongodb.net/imdb',params);
+      const url=process.env.DB
+    mongoose.connect(url,params);
 
     mongoose.connection.on('connected',()=>{
 
